@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List</title>
+    </head>
+
+    <body>
+        <form action="/delete/<%=customListName%>" method="POST">     
+               <center><%= customListName  %>
+
+          <% list.forEach(function(itr){ %>
+            <br>  <input type="checkbox" value="<%= itr._id %>" name="id"  onchange="this.form.submit()" > <%= itr.items[0].name %>
+            <input type="hidden" >
+          <%  }) %>
+                </center>
+        </form>
+
+        <form action="/<%= customListName %>" method="POST">
+            <input type="text" name="todo">
+            <input type="submit" >
+        </form>
+    </body>
+</html>
